@@ -66,3 +66,16 @@ The footer follows the standard three-line CoE Toolkit layout:
 3. A localized privacy statement describing local processing, browser language storage, and public third-party resources.
 
 The footer is centered, uses the standard dark background, and remains at the end of the page through the Application Shell grid.
+
+## Favicon
+
+The favicon files are stored in `assets/icons/` and referenced through relative
+paths. The query parameter `?rev=2` forces browsers and GitHub Pages to refresh
+previously cached favicon files.
+
+After deployment, if an older favicon is still shown:
+
+1. Open the site in a private browser window.
+2. Perform a hard refresh.
+3. Close and reopen the browser tab.
+4. Confirm that `assets/icons/favicon.svg?rev=2` is publicly accessible.
