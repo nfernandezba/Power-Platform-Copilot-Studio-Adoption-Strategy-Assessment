@@ -56,3 +56,13 @@ The public assessment version is fixed at `v1.0`.
 The header includes the mandatory 3 px CoE Toolkit multicolor identity line.
 It is rendered directly below the black application header and spans the full
 viewport width.
+
+## Footer format
+
+The footer follows the standard three-line CoE Toolkit layout:
+
+1. Tool name, CoE Toolkit, public version, and current year.
+2. LinkedIn icon and Nico Fernandez author link.
+3. A localized privacy statement describing local processing, browser language storage, and public third-party resources.
+
+The footer is centered, uses the standard dark background, and remains at the end of the page through the Application Shell grid.
