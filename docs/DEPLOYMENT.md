@@ -50,3 +50,9 @@ generator loads jsPDF from a CDN.
 ## Version
 
 The public assessment version is fixed at `v1.0`.
+
+## Header identity line
+
+The header includes the mandatory 3 px CoE Toolkit multicolor identity line.
+It is rendered directly below the black application header and spans the full
+viewport width.
