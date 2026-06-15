@@ -14,7 +14,7 @@ A bilingual, browser-based open-source assessment that helps organizations evalu
 
 ---
 
-![Power Platform & Copilot Studio Adoption Strategy - Quick Assessment](./assets/adoption-home.png)
+![Power Platform & Copilot Studio Adoption Strategy - Quick Assessment](./assets/images/adoption-assessment-home.png)
 
 ## About this project
 
@@ -385,6 +385,71 @@ Se genera cuando no existen condiciones rojas o ámbar.
 
 Este enfoque impide que una puntuación general alta compense automáticamente una ausencia crítica de patrocinio, gobierno, medición, ownership o supervisión.
 
+## Modo de prueba
+
+La aplicación incorpora un modo de prueba para validar la experiencia completa sin tener que responder manualmente todas las preguntas.
+
+### Abrir el modo de prueba
+
+```text
+index.html?test=1
+```
+
+También se admite:
+
+```text
+index.html?mode=test
+```
+
+El modo de prueba muestra un panel adicional desde el que se puede:
+
+- cargar un assessment de ejemplo completamente respondido;
+- abrir directamente la página de resultados;
+- ejecutar los tests internos de la aplicación;
+- descargar un reporte PDF de ejemplo en el idioma activo.
+
+### Abrir directamente los resultados de ejemplo
+
+```text
+index.html?test=1&sample=1
+```
+
+El dataset de ejemplo activa los módulos de Power Platform y Copilot Studio y genera un resultado determinista:
+
+- puntuación general: **76/100**;
+- nivel: **Gestionado**;
+- riesgo: **Verde**;
+- completitud: **100 %**.
+
+Los datos son ficticios y se utilizan exclusivamente para demostración y pruebas.
+
+### Descargar automáticamente el reporte de ejemplo
+
+```text
+index.html?test=1&sample=1&autopdf=1
+```
+
+La descarga automática puede estar sujeta a la política de descargas del navegador. El panel de prueba mantiene disponible un botón manual alternativo.
+
+### API de prueba
+
+Cuando el modo de prueba está activo, la aplicación expone temporalmente:
+
+```javascript
+window.__coeTestApi
+```
+
+Métodos disponibles:
+
+```javascript
+window.__coeTestApi.loadSample();
+window.__coeTestApi.downloadSamplePdf();
+window.__coeTestApi.runSelfTests();
+window.__coeTestApi.getState();
+```
+
+Esta API está destinada a pruebas funcionales y automatizadas. No modifica la versión pública de la herramienta.
+
 ## Dependencias externas
 
 La aplicación utiliza:
@@ -414,10 +479,37 @@ Las solicitudes realizadas para cargar fuentes, librerías o imágenes externas 
 
 ## Herramientas adicionales del CoE Toolkit
 
-- [Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
-- [Power Platform & Copilot Studio Environment Strategy - Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
-- [Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+Las siguientes herramientas complementan el assessment de adopción y cubren distintos aspectos del gobierno, inventario, capacidad y ciclo de vida de Power Platform y Copilot Studio.
 
+### Copilot Studio Credits Monitor
+
+Aplicación bilingüe para consultar la capacidad de Copilot Studio, sus asignaciones por entorno y el inventario de agentes utilizando APIs públicas y soportadas de Microsoft. La información funcional se mantiene únicamente en memoria durante la sesión.
+
+[![Copilot Studio Credits Monitor](./assets/images/tools/tool-copilot-studio-credits-monitor.png)](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+
+[Acceder a Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+
+### Power Platform & Copilot Studio Environment Strategy - Quick Assessment
+
+Assessment bilingüe para evaluar la definición, cobertura, documentación, aprobación, comunicación y vigencia de la estrategia de entornos de Power Platform y Copilot Studio.
+
+[![Power Platform & Copilot Studio Environment Strategy - Quick Assessment](./assets/images/tools/tool-environment-strategy-assessment.png)](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+
+[Acceder al Environment Strategy Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+
+### Power Platform Tenant Inventory Explorer
+
+Explorador modular para obtener una visión del tenant, los entornos, los recursos, las señales de gobierno, las políticas DLP y las configuraciones de administración. Permite exportar los resultados en PDF, CSV y JSON.
+
+[![Power Platform Tenant Inventory Explorer](./assets/images/tools/tool-tenant-inventory-explorer.png)](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
+
+[Acceder a Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
+
+### Agent Passport
+
+Herramienta bilingüe para idear, gobernar y operar agentes durante todo su ciclo de vida. Organiza la información del agente en identidad y propósito, gobierno y riesgo, conocimiento y datos, acciones e integraciones, ownership, observabilidad, ciclo de vida y revisiones, y permite generar artefactos en PDF y JSON.
+
+![Agent Passport](./assets/images/tools/tool-agent-passport.png)
 ## Libros relacionados
 
 ### Español
@@ -787,6 +879,71 @@ Generated when no red or amber conditions are present.
 
 This prevents a high overall score from automatically offsetting a critical gap in sponsorship, governance, measurement, ownership, or supervision.
 
+## Test mode
+
+The application includes a test mode that validates the complete experience without requiring every question to be answered manually.
+
+### Open test mode
+
+```text
+index.html?test=1
+```
+
+The following form is also supported:
+
+```text
+index.html?mode=test
+```
+
+Test mode displays an additional panel that can:
+
+- load a fully completed sample assessment;
+- open the completed results page directly;
+- execute the application's built-in self-tests;
+- download a sample PDF report in the active language.
+
+### Open the completed sample results directly
+
+```text
+index.html?test=1&sample=1
+```
+
+The sample dataset enables the Power Platform and Copilot Studio modules and produces a deterministic result:
+
+- overall score: **76/100**;
+- level: **Managed**;
+- risk: **Green**;
+- completion: **100%**.
+
+The sample data is fictional and is used exclusively for demonstration and testing.
+
+### Download the sample report automatically
+
+```text
+index.html?test=1&sample=1&autopdf=1
+```
+
+Automatic downloads may be subject to the browser's download policy. A manual download button remains available in the test panel.
+
+### Test API
+
+When test mode is active, the application temporarily exposes:
+
+```javascript
+window.__coeTestApi
+```
+
+Available methods:
+
+```javascript
+window.__coeTestApi.loadSample();
+window.__coeTestApi.downloadSamplePdf();
+window.__coeTestApi.runSelfTests();
+window.__coeTestApi.getState();
+```
+
+This API is intended for functional and automated testing. It does not change the public version of the tool.
+
 ## External dependencies
 
 The application uses:
@@ -816,10 +973,37 @@ Requests used to load external fonts, libraries, or images do not include assess
 
 ## Additional CoE Toolkit tools
 
-- [Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
-- [Power Platform & Copilot Studio Environment Strategy - Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
-- [Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+The following tools complement the adoption assessment and cover different aspects of Power Platform and Copilot Studio governance, inventory, capacity, and lifecycle management.
 
+### Copilot Studio Credits Monitor
+
+A bilingual application for reviewing Copilot Studio capacity, environment assignments, and agent inventory using Microsoft-supported public APIs. Functional report information remains only in memory during the browser session.
+
+[![Copilot Studio Credits Monitor](./assets/images/tools/tool-copilot-studio-credits-monitor.png)](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+
+[Open Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+
+### Power Platform & Copilot Studio Environment Strategy - Quick Assessment
+
+A bilingual assessment for evaluating the definition, coverage, documentation, approval, communication, and currency of a Power Platform and Copilot Studio environment strategy.
+
+[![Power Platform & Copilot Studio Environment Strategy - Quick Assessment](./assets/images/tools/tool-environment-strategy-assessment.png)](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+
+[Open the Environment Strategy Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+
+### Power Platform Tenant Inventory Explorer
+
+A modular explorer that provides visibility into the tenant, environments, resources, governance signals, DLP policies, and environment-management settings. Results can be exported to PDF, CSV, and JSON.
+
+[![Power Platform Tenant Inventory Explorer](./assets/images/tools/tool-tenant-inventory-explorer.png)](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
+
+[Open Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
+
+### Agent Passport
+
+A bilingual tool for ideating, governing, and operating agents throughout their lifecycle. It organizes agent information across identity and purpose, governance and risk, knowledge and data, actions and integrations, ownership, observability, lifecycle, and reviews, and can generate PDF and JSON artifacts.
+
+![Agent Passport](./assets/images/tools/tool-agent-passport.png)
 ## Related books
 
 ### English
@@ -831,6 +1015,11 @@ Requests used to load external fonts, libraries, or images do not include assess
 
 - [Definiendo la estructura marco para el Centro de Excelencia de Power Platform](https://www.amazon.com/-/es/Definiendo-estructura-Centro-Excelencia-Platform/dp/B0FSDWQMHW/ref=tmm_pap_swatch_0)
 - [Copilot Studio y el futuro del Centro de Excelencia de Power Platform](https://www.amazon.com/-/es/Nicol%C3%A1s-Andr%C3%A9s-Fern%C3%A1ndez/dp/B0GZGL3T1K/ref=tmm_pap_swatch_0)
+
+## Repository documentation
+
+- [Deployment guide](./docs/DEPLOYMENT.md)
+- [Testing and test mode](./docs/TESTING.md)
 
 ## Author
 
