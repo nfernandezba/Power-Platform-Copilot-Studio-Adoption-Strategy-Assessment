@@ -1,14 +1,82 @@
-# Power Platform & Copilot Studio Adoption Strategy – Quick Assessment
+# Power Platform & Copilot Studio Adoption Strategy - Quick Assessment
+
+![Version](https://img.shields.io/badge/version-1.0-5552B4)
+![License](https://img.shields.io/badge/license-MIT-27B8C6)
+![Languages](https://img.shields.io/badge/languages-es--AR%20%7C%20en--US-3895FF)
+![Application](https://img.shields.io/badge/application-single--file%20HTML-FFC000)
+![Processing](https://img.shields.io/badge/assessment%20processing-local-BD47BD)
+
+A bilingual, browser-based open-source assessment that helps organizations evaluate the maturity of their Power Platform and Copilot Studio adoption strategy. It produces weighted results, risk findings, priority recommendations, and a downloadable executive PDF without transmitting assessment responses.
+
+**Public assessment version: 1.0**
 
 [Español](#español) · [English](#english)
 
-![Power Platform & Copilot Studio Adoption Strategy – Quick Assessment](./assets/adoption-home.png)
-
 ---
 
-## Breve descripción
+![Power Platform & Copilot Studio Adoption Strategy - Quick Assessment](./assets/adoption-home.png)
 
-Herramienta web bilingüe de autoevaluación que permite analizar la madurez de la estrategia de adopción de Power Platform y Copilot Studio. Evalúa estrategia, audiencias, capacitación, comunidad, acceso, gobernanza, activación de casos de uso, medición y generación de valor, y produce un diagnóstico ejecutivo con riesgos, prioridades y un plan orientativo de 90 días.
+## About this project
+
+**Power Platform & Copilot Studio Adoption Strategy - Quick Assessment** is a community-driven, bilingual self-assessment designed to help organizations evaluate whether their adoption strategy can turn available technology into sustained participation, recurring use, scalable solutions and agents, and measurable business value.
+
+The assessment goes beyond checking whether training, communications, communities, or champions exist. It examines whether the organization has a coherent adoption system that connects strategy, audiences, capability building, governance, use-case activation, behavioural change, value realization, and continuous improvement.
+
+The tool is intentionally lightweight: it runs directly in a web browser, does not require installation or authentication, and can be published as a static website. It is suitable for an initial adoption health check, a Center of Excellence workshop, a change-management discussion, a roadmap exercise, or a structured conversation between business leaders, adoption teams, platform owners, makers, agent owners, and governance stakeholders.
+
+### What the assessment provides
+
+After completing the questionnaire, the user receives:
+
+- an overall adoption maturity score from 0 to 100;
+- an adoption maturity level;
+- an independent red, amber, or green risk status;
+- a completion indicator;
+- weighted results across six assessment domains;
+- separate results for the Power Platform and Copilot Studio modules when applicable;
+- a question-level coverage map;
+- key strengths and priority gaps;
+- critical risk findings;
+- up to five prioritized recommendations;
+- an indicative 90-day action plan;
+- contextual findings based on adoption stage, management model, technologies, and audiences;
+- a downloadable executive PDF report.
+
+### Downloadable PDF report
+
+The final results page includes an option to generate and download a multi-page PDF report. The report is created locally in the browser from the responses provided during the assessment.
+
+The PDF is intended to support:
+
+- Center of Excellence and adoption workshops;
+- executive and steering committee discussions;
+- change-management and enablement planning;
+- adoption roadmap creation;
+- prioritization of improvement initiatives;
+- documentation of an initial baseline;
+- comparison with future assessment results.
+
+Depending on the answers provided, the report contains the overall score, maturity level, risk status, completion rate, organizational context, domain results, technology-module results, strengths, risks, priority actions, a 90-day plan, the question-level coverage map, open responses, scale definitions, related tools, books, disclaimers, and author links.
+
+### Privacy by design
+
+The assessment is designed to process responses locally in the browser.
+
+It does **not** require:
+
+- a user account;
+- a Microsoft tenant connection;
+- an email address;
+- a backend service;
+- a database;
+- analytics;
+- submission of responses to the author.
+
+Assessment answers remain in memory during the current browser session. The language preference may be stored locally in the browser. Answers are not automatically uploaded or transmitted.
+
+External requests used to load fonts, the PDF library, book covers, or linked resources do not include assessment responses.
+
+> This project is a self-assessment and guidance tool. It does not replace a detailed adoption discovery, organizational change assessment, technical review, security assessment, compliance audit, licensing review, or Microsoft certification.
 
 ---
 
@@ -16,165 +84,338 @@ Herramienta web bilingüe de autoevaluación que permite analizar la madurez de 
 
 ## Descripción
 
-**Power Platform & Copilot Studio Adoption Strategy – Quick Assessment v1.0** es una aplicación web de una sola página diseñada para ayudar a una organización a evaluar si dispone de las capacidades necesarias para transformar Power Platform y Copilot Studio en comportamientos sostenibles, soluciones utilizadas de forma recurrente y resultados medibles.
+**Power Platform & Copilot Studio Adoption Strategy - Quick Assessment** es una herramienta web bilingüe de autoevaluación creada para la comunidad de Power Platform.
 
-La herramienta forma parte del **CoE Toolkit** desarrollado por **Nico Fernandez**.
+Permite analizar si una organización dispone de una estrategia de adopción capaz de transformar la disponibilidad de Power Platform y Copilot Studio en participación sostenida, desarrollo de capacidades, cambios de comportamiento, uso recurrente, escalado de casos de uso y resultados medibles.
 
-## Características principales
+El assessment está orientado a:
 
-- Español de Argentina (`es-AR`) e inglés de Estados Unidos (`en-US`).
-- Interfaz responsive para desktop, tablet y dispositivos móviles.
-- Perfil organizacional y selección del alcance tecnológico.
-- 24 preguntas comunes distribuidas en seis dominios.
-- Módulo condicional de Power Platform.
-- Módulo condicional de Copilot Studio.
-- Escala de madurez de 0 a 4.
-- Puntuación global ponderada de 0 a 100.
-- Estado de riesgo independiente: rojo, ámbar o verde.
-- Resultados por dominio y por módulo tecnológico.
-- Mapa de cobertura de las preguntas aplicables.
-- Identificación automática de fortalezas, gaps y riesgos críticos.
-- Hasta cinco acciones prioritarias.
-- Plan orientativo de actuación para los siguientes 90 días.
-- Reporte ejecutivo multipágina en PDF.
-- Enlaces a LinkedIn, libros y herramientas relacionadas.
-- Procesamiento local de las respuestas en el navegador.
-- Sin backend, base de datos ni autenticación.
+- responsables de Power Platform y Copilot Studio;
+- líderes y miembros de Centros de Excelencia;
+- responsables de adopción, comunicación y gestión del cambio;
+- community managers y responsables de redes de champions;
+- responsables de negocio y owners de casos de uso;
+- makers, desarrolladores profesionales y arquitectos;
+- propietarios y operadores de agentes;
+- equipos de gobierno, seguridad, riesgo y compliance;
+- responsables de medición y realización de valor.
 
-## Dominios evaluados
+La herramienta no inspecciona automáticamente el tenant ni mide directamente el uso real de las soluciones. Evalúa las capacidades declaradas por la organización y funciona como punto de entrada para un discovery, una revisión de adopción o la definición de un roadmap más detallado.
+
+## Cómo funciona el assessment
+
+El usuario recorre un flujo guiado compuesto por cuatro tipos de información:
+
+1. **Perfil organizacional:** captura la etapa de adopción, el modelo de gestión, las tecnologías incluidas y las audiencias prioritarias.
+2. **Preguntas principales:** evalúa la madurez de la estrategia en seis dominios ponderados.
+3. **Módulos condicionales:** profundiza en Power Platform y Copilot Studio cuando esas tecnologías forman parte del alcance.
+4. **Contexto y prioridades:** recoge la principal barrera, la audiencia con mayor oportunidad y el resultado esperado para los próximos 90 días.
+
+Las respuestas del perfil no se utilizan para inflar o reducir artificialmente el score. Sirven para contextualizar el resultado y activar los módulos aplicables.
+
+Las preguntas marcadas como **No aplicable** se excluyen del denominador. Los módulos que no se activan no se muestran y no afectan el cálculo.
+
+## Objetivo del assessment
+
+El objetivo principal es ayudar a una organización a responder una pregunta concreta:
+
+> ¿Contamos con una estrategia de adopción suficientemente estructurada para convertir Power Platform y Copilot Studio en comportamientos sostenibles y valor medible?
+
+Para responderla, la herramienta separa cuatro aspectos que no deberían confundirse:
+
+- **Capacidades de adopción:** si existen estrategia, patrocinio, enablement, comunidad, soporte y procesos.
+- **Comportamientos:** si las personas progresan, participan y utilizan las soluciones o agentes de forma recurrente.
+- **Valor:** si los casos de uso producen resultados medibles.
+- **Sostenibilidad:** si el modelo cuenta con ownership, recursos, medición y mejora continua.
+
+Esta separación evita que una organización obtenga una valoración artificialmente alta únicamente por disponer de cursos, comunicaciones, licencias, aplicaciones, agentes o usuarios registrados.
+
+## Qué recibe el usuario al finalizar
+
+Al completar el assessment, la página de resultados presenta:
+
+- score general de 0 a 100;
+- nivel de madurez;
+- estado de riesgo rojo, ámbar o verde;
+- porcentaje de completitud;
+- resultado porcentual de cada dominio;
+- resultado específico de Power Platform, cuando corresponde;
+- resultado específico de Copilot Studio, cuando corresponde;
+- mapa de cobertura por pregunta;
+- principales fortalezas;
+- brechas prioritarias;
+- riesgos críticos;
+- hasta cinco acciones recomendadas;
+- plan orientativo de 90 días;
+- contexto aportado mediante las preguntas abiertas.
+
+### Reporte PDF descargable
+
+La página final permite descargar un reporte ejecutivo en PDF generado directamente en el navegador.
+
+El reporte puede utilizarse como:
+
+- evidencia de un diagnóstico inicial;
+- material de trabajo para un workshop;
+- insumo para una estrategia de adopción;
+- resumen para un comité de gobierno o transformación;
+- base para un backlog de mejoras;
+- referencia para comparar futuras evaluaciones.
+
+El PDF incluye, según corresponda:
+
+- nombre y versión del assessment;
+- fecha de generación;
+- score general y nivel de madurez;
+- estado de riesgo;
+- porcentaje de completitud;
+- perfil organizacional;
+- resultados por dominio;
+- resultados de los módulos tecnológicos;
+- fortalezas y brechas;
+- riesgos críticos;
+- acciones prioritarias;
+- plan de 90 días;
+- mapa de cobertura;
+- respuestas abiertas;
+- definiciones de la escala;
+- disclaimer;
+- enlace al perfil de LinkedIn del autor;
+- herramientas y libros relacionados.
+
+El archivo PDF se crea localmente a partir de las respuestas introducidas. La descarga no implica el envío de datos a un servidor.
+
+## Privacidad y tratamiento de datos
+
+La privacidad es un principio de diseño del assessment.
+
+La herramienta:
+
+- procesa las respuestas localmente en el navegador;
+- no requiere login;
+- no solicita correo electrónico;
+- no se conecta al tenant de Microsoft;
+- no utiliza una base de datos;
+- no guarda las respuestas en el repositorio;
+- no incorpora analítica de comportamiento;
+- no envía las respuestas al autor ni a terceros.
+
+Las respuestas existen únicamente durante la sesión del navegador. Al cerrar o recargar la página pueden perderse. La preferencia de idioma puede almacenarse localmente.
+
+La aplicación puede realizar solicitudes externas para cargar fuentes, la librería de generación de PDF, portadas o enlaces de recursos. Esas solicitudes no contienen las respuestas del assessment.
+
+Para una implementación completamente aislada u offline, las dependencias externas pueden alojarse localmente.
+
+## Objetivos
+
+El assessment ayuda a determinar:
+
+1. Si existe una estrategia formal de adopción.
+2. Si cuenta con patrocinio ejecutivo activo.
+3. Si las audiencias están identificadas y segmentadas.
+4. Si existen recorridos de adopción diferenciados.
+5. Si la capacitación, la comunidad y el soporte permiten desarrollar capacidades.
+6. Si el acceso y el gobierno generan claridad y confianza.
+7. Si existe un proceso para identificar, priorizar y escalar casos de uso.
+8. Si la organización mide comportamientos y resultados.
+9. Si el modelo dispone de recursos, ownership y mejora continua.
+10. Si Power Platform y Copilot Studio cuentan con recorridos específicos de adopción.
+11. Qué áreas presentan mayor riesgo o requieren intervención.
+12. Qué acciones deberían priorizarse durante los próximos 90 días.
+
+## Qué evalúa
+
+- Estrategia formal de adopción.
+- Alineamiento con objetivos de negocio y transformación.
+- Patrocinio ejecutivo.
+- Recursos, financiación y revisión de la estrategia.
+- Segmentación de audiencias.
+- Necesidades, motivaciones y barreras.
+- Recorridos desde el descubrimiento hasta el uso recurrente.
+- Propuestas de valor por audiencia.
+- Itinerarios de aprendizaje.
+- Aprendizaje aplicado.
+- Comunidades y redes de champions.
+- Soporte, mentoring y office hours.
+- Onboarding, licencias y acceso.
+- Comprensión de políticas y responsabilidades.
+- Excepciones y escalado de decisiones.
+- Proporcionalidad de los controles.
+- Ideación, intake y priorización.
+- Escalado de pilotos y prototipos.
+- Gestión del portfolio.
+- Métricas de actividad, comportamiento y resultado.
+- Realización de valor.
+- Sostenibilidad y continuous enhancement.
+- Progresión de makers.
+- Transición de soluciones a producción.
+- Confianza, calidad y mejora de agentes.
+
+## Qué no evalúa
+
+- Inspección automática del tenant.
+- Medición directa del uso real mediante APIs.
+- Validación técnica de políticas DLP.
+- Revisión exhaustiva de configuraciones de seguridad.
+- Auditoría de cumplimiento.
+- Revisión de licenciamiento.
+- Evaluación detallada de cada aplicación, flujo, agente o sitio.
+- Calidad técnica del código o de las soluciones.
+- Benchmarking frente a otras organizaciones.
+- Certificación de Microsoft.
+- Sustitución de un discovery o assessment profesional detallado.
+
+## Estructura del assessment
+
+| Componente | Cantidad | Finalidad |
+|---|---:|---|
+| Perfil organizacional | 4 preguntas | Contextualizar etapa, modelo, tecnologías y audiencias |
+| Preguntas principales | 24 | Evaluar la madurez de la estrategia en seis dominios |
+| Módulo Power Platform | Hasta 3 | Profundizar makers, producción, uso y valor |
+| Módulo Copilot Studio | Hasta 3 | Profundizar creación, confianza, operación y mejora de agentes |
+| Preguntas abiertas | 3 | Capturar barreras, oportunidades y objetivo a 90 días |
+| Resultado | N/A | Mostrar score, riesgo, cobertura, fortalezas y acciones |
+
+## Dominios y ponderaciones
 
 | Dominio | Peso |
 |---|---:|
-| Estrategia, objetivos y patrocinio | 20 % |
-| Audiencias y recorridos de adopción | 15 % |
-| Capacitación, comunidad y acompañamiento | 15 % |
-| Acceso, gobernanza y confianza | 15 % |
-| Activación y escalado de casos de uso | 15 % |
-| Medición, valor y sostenibilidad | 20 % |
+| Estrategia, objetivos y patrocinio | 20% |
+| Audiencias y recorridos de adopción | 15% |
+| Capacitación, comunidad y acompañamiento | 15% |
+| Acceso, gobierno y confianza | 15% |
+| Activación y escalado de casos de uso | 15% |
+| Medición, valor y sostenibilidad | 20% |
+| **Total** | **100%** |
 
 ## Módulos condicionales
 
 ### Power Platform
 
-Se activa cuando Power Apps, Power Automate, Power BI o Power Pages forman parte del alcance.
+Se activa cuando la organización selecciona Power Apps, Power Automate, Power BI o Power Pages.
 
 Evalúa:
 
-- Segmentación y progresión de makers.
-- Transición desde prototipos hasta soluciones productivas.
-- Ownership, soporte y ciclo de vida.
-- Uso recurrente y valor.
-- Escalado, mejora o retirada de soluciones.
+- perfiles y progresión de makers;
+- transición desde prototipos hasta soluciones productivas;
+- ownership, soporte, seguridad y ciclo de vida;
+- adopción por usuarios finales;
+- uso recurrente;
+- medición de valor;
+- escalado, mejora o retirada de soluciones.
 
 ### Copilot Studio
 
-Se activa cuando Copilot Studio forma parte del alcance actual o previsto.
+Se activa cuando la organización selecciona Copilot Studio.
 
 Evalúa:
 
-- Preparación de creadores y propietarios de agentes.
-- Propósito, audiencia y límites.
-- Fuentes de conocimiento, acciones y pruebas.
-- Publicación y responsabilidades operativas.
-- Comprensión de capacidades y limitaciones por los usuarios.
-- Calidad, resolución, feedback y escalado.
-- Mejora continua y uso responsable de IA.
+- orientación para creadores y propietarios;
+- propósito y audiencias;
+- knowledge sources y acciones;
+- pruebas, riesgos y responsabilidades operativas;
+- comprensión de capacidades y limitaciones;
+- confianza apropiada del usuario;
+- verificación y escalado humano;
+- calidad, resolución y feedback;
+- mejora continua del agente.
 
-## Escala de madurez
+Los módulos que no se activan no se muestran y no afectan el cálculo del score principal.
 
-| Puntuación | Nivel | Interpretación |
+## Escala de respuesta
+
+| Valor | Respuesta | Interpretación |
 |---:|---|---|
 | 0 | Inexistente | La capacidad no existe o no fue considerada. |
-| 1 | Inicial | Existen iniciativas aisladas o informales. |
-| 2 | Definido | La capacidad está diseñada, pero se aplica parcialmente. |
-| 3 | Gestionado | La capacidad se aplica de forma consistente y se revisa con evidencias. |
+| 1 | Inicial | Existen actividades aisladas, informales o dependientes de personas concretas. |
+| 2 | Definido | La capacidad fue diseñada o documentada, pero se aplica parcialmente. |
+| 3 | Gestionado | La capacidad se aplica de forma consistente y se revisa mediante evidencias. |
 | 4 | Optimizado | La capacidad se mide, mejora continuamente y se conecta con resultados de negocio. |
+| N/A | No aplicable | La pregunta no corresponde al contexto de la organización y se excluye del cálculo. |
 
-## Niveles globales
+## Modelo de puntuación
 
-| Resultado | Nivel |
-|---:|---|
-| 0–39 | Inicial |
-| 40–59 | Emergente |
-| 60–74 | Definido |
-| 75–89 | Gestionado |
-| 90–100 | Optimizado |
+El porcentaje de cada dominio se calcula sobre las preguntas respondidas y aplicables:
 
-Las respuestas marcadas como **No aplicable** se excluyen del cálculo.
+```text
+Porcentaje del dominio =
+    Puntos obtenidos
+    ---------------- × 100
+    Máximo posible
+```
 
-## Evaluación de riesgo
+La contribución de cada dominio se obtiene aplicando su ponderación:
 
-El estado de riesgo se calcula por separado de la puntuación global. Una puntuación general alta no compensa automáticamente una carencia crítica.
+```text
+Contribución ponderada =
+    Porcentaje del dominio × Peso del dominio
+```
 
-- **Rojo:** existe al menos una ausencia crítica o varias capacidades críticas en estado inicial.
-- **Ámbar:** hay capacidades relevantes definidas, pero todavía no se aplican de forma consistente.
-- **Verde:** las capacidades críticas presentan una cobertura adecuada.
+El score general es la suma de las contribuciones ponderadas y se redondea al entero más cercano.
 
-## Reporte PDF
+| Score | Nivel | Interpretación |
+|---:|---|---|
+| 0–39 | Inicial | La adopción depende principalmente de iniciativas aisladas. |
+| 40–59 | Emergente | Existen capacidades relevantes, pero están fragmentadas o se aplican de manera inconsistente. |
+| 60–74 | Definido | La estrategia y las capacidades principales están establecidas. |
+| 75–89 | Gestionado | La adopción se ejecuta de forma consistente y se gestiona mediante evidencias. |
+| 90–100 | Optimizado | La adopción está integrada en el negocio y evoluciona mediante medición y mejora continua. |
 
-El assessment genera un informe ejecutivo A4 con:
+## Modelo de riesgo
 
-- Portada y fecha de generación.
-- Resultado global, madurez, riesgo y completitud.
-- Contexto organizacional.
-- Resultados por dominio y módulo.
-- Fortalezas y gaps.
-- Riesgos críticos.
-- Acciones prioritarias.
-- Plan de 90 días.
-- Mapa de cobertura.
-- Respuestas abiertas.
-- Definición de la escala.
-- Herramientas adicionales.
-- Libros relacionados.
-- Enlaces clicables.
+El estado de riesgo se calcula de forma independiente del score general.
 
-El PDF se genera localmente mediante **jsPDF**.
+### Rojo
+
+Se genera cuando:
+
+- una pregunta crítica obtiene 0; o
+- dos o más preguntas críticas obtienen 1.
+
+### Ámbar
+
+Se genera cuando no existe una condición roja y:
+
+- una pregunta crítica obtiene 1; o
+- dos o más preguntas críticas obtienen 2.
+
+### Verde
+
+Se genera cuando no existen condiciones rojas o ámbar.
+
+Este enfoque impide que una puntuación general alta compense automáticamente una ausencia crítica de patrocinio, gobierno, medición, ownership o supervisión.
+
+## Dependencias externas
+
+La aplicación utiliza:
+
+- [Google Fonts](https://fonts.google.com/) para `Space Grotesk` e `Inter`.
+- [jsPDF 2.5.1](https://github.com/parallax/jsPDF) para generar el reporte PDF.
+- Enlaces e imágenes de Amazon para acceder a las ediciones de los libros.
+
+Para una distribución completamente offline, descargá y serví localmente Google Fonts, jsPDF y los recursos gráficos, y actualizá las referencias del archivo HTML.
 
 ## Privacidad
 
-- Las respuestas se procesan localmente en el navegador.
-- No se transmiten a ningún servidor.
-- No se utiliza una base de datos.
-- No se requiere iniciar sesión.
-- La preferencia de idioma puede guardarse en `localStorage`.
-- El PDF solo se genera y descarga cuando el usuario lo solicita.
+Las respuestas:
 
-## Uso local
+- se procesan localmente en el navegador;
+- no se almacenan en una base de datos;
+- no se envían a un servidor;
+- no requieren identificación;
+- no utilizan analítica;
+- no requieren correo electrónico.
 
-1. Descargá o cloná el repositorio.
-2. Abrí `index.html` en un navegador moderno.
-3. Seleccioná el idioma.
-4. Completá el perfil y las preguntas aplicables.
-5. Revisá los resultados.
-6. Descargá el reporte PDF.
+La preferencia de idioma puede almacenarse mediante `localStorage`.
 
-No se requiere instalación, compilación ni servidor local.
+El usuario puede elegir voluntariamente descargar, guardar o compartir el reporte PDF.
 
-## Publicación en GitHub Pages
-
-1. Creá un repositorio en GitHub.
-2. Copiá `index.html`, `README.md` y la carpeta `assets` en la raíz.
-3. Realizá el commit y push.
-4. Abrí **Settings > Pages**.
-5. Seleccioná **Deploy from a branch**.
-6. Elegí la rama principal y la carpeta `/root`.
-7. Guardá la configuración.
-
-## Estructura del proyecto
-
-```text
-.
-├── index.html
-├── README.md
-└── assets
-    └── adoption-home.png
-```
+Las solicitudes realizadas para cargar fuentes, librerías o imágenes externas no contienen las respuestas del assessment.
 
 ## Herramientas adicionales del CoE Toolkit
 
 - [Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
-- [Power Platform & Copilot Studio Environment Strategy – Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+- [Power Platform & Copilot Studio Environment Strategy - Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
 - [Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
 
 ## Libros relacionados
@@ -187,54 +428,257 @@ No se requiere instalación, compilación ni servidor local.
 ### English
 
 - [Defining the Framework Structure for the Power Platform Center of Excellence](https://www.amazon.com/-/es/Defining-Framework-Structure-Platform-Excellence/dp/B0GDDRCD2C/ref=tmm_pap_swatch_0)
-- [Copilot Studio and the Future of the Power Platform Center of Excellence](https://www.amazon.com/-/es/Nicol%C3%A1s-Andr%C3%A9s-Fern%C3%A1ndez/dp/B0GZGNS19B/ref=tmm_pap_swatch_0)
+- [Copilot Studio and the Future of the Power Platform Center of Excellence](https://www.amazon.com/-/es/Nicol%C3%A1s-Andr%C3%A9s-Fern%C3%A1ndez/dp/B0H2VTJZGR/ref=tmm_pap_swatch_0)
 
 ## Autor
 
 **Nico Fernandez**
 
-[LinkedIn](https://www.linkedin.com/in/nfernandezba)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nico%20Fernandez-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nfernandezba)
 
-## Aviso
+## Licencia
 
-Esta herramienta es una autoevaluación orientativa. No constituye una certificación de Microsoft, una auditoría de cumplimiento, una evaluación de seguridad, una garantía de adopción ni un sustituto de una revisión profesional detallada.
+El código fuente, la lógica del assessment y la documentación de este repositorio se distribuyen bajo la **MIT License**. Consultá el archivo [LICENSE](LICENSE).
+
+La licencia MIT permite utilizar, copiar, modificar, combinar, publicar y distribuir el proyecto, siempre que se conserve el aviso de copyright y la licencia.
+
+### Activos excluidos de la licencia MIT
+
+Salvo indicación expresa, los siguientes activos no se distribuyen bajo la licencia MIT:
+
+- nombre, logotipo e identidad visual personal de Nico Fernandez;
+- portadas de libros;
+- contenido de los libros;
+- marcas, logotipos y activos de terceros;
+- marcas registradas de Microsoft.
+
+Su inclusión en la herramienta o en el repositorio no concede derechos independientes de reutilización, modificación, redistribución o explotación comercial.
+
+Los forks y adaptaciones deberían reemplazar o eliminar estos activos cuando no cuenten con autorización para utilizarlos.
+
+## Marcas registradas
+
+Microsoft, Power Platform, Power Apps, Power Automate, Power BI, Power Pages, Copilot Studio, Dataverse, Microsoft 365 y Dynamics 365 son marcas del grupo de empresas Microsoft.
+
+Este proyecto es un recurso independiente creado para la comunidad. No está afiliado, patrocinado, certificado ni respaldado por Microsoft.
+
+## Disclaimer
+
+Este assessment es una autoevaluación orientativa destinada a identificar capacidades y áreas que podrían requerir desarrollo o revisión.
+
+No constituye:
+
+- una certificación de Microsoft;
+- una auditoría de cumplimiento;
+- una evaluación de seguridad;
+- asesoramiento legal;
+- asesoramiento de licenciamiento;
+- una garantía de adopción;
+- una valoración financiera;
+- un sustituto de un discovery, assessment o revisión profesional detallada.
+
+El uso de la herramienta y la interpretación de sus resultados son responsabilidad del usuario.
 
 ---
 
 # English
 
-## Short description
-
-A bilingual browser-based self-assessment that helps organizations evaluate the maturity of their Power Platform and Copilot Studio adoption strategy. It reviews strategy, audiences, enablement, community, access, governance, use-case activation, measurement, and value, and produces an executive diagnosis with risks, priorities, and an indicative 90-day action plan.
-
 ## Overview
 
-**Power Platform & Copilot Studio Adoption Strategy – Quick Assessment v1.0** is a single-page web application designed to help organizations assess whether they have the capabilities required to turn Power Platform and Copilot Studio into sustainable behaviors, recurring use, and measurable outcomes.
+**Power Platform & Copilot Studio Adoption Strategy - Quick Assessment** is a bilingual, browser-based open-source self-assessment created for the Power Platform community.
 
-The tool is part of the **CoE Toolkit** developed by **Nico Fernandez**.
+It helps organizations determine whether their adoption strategy can turn Power Platform and Copilot Studio into sustained participation, capability development, behavioural change, recurring use, scalable use cases, and measurable business outcomes.
 
-## Key features
+The assessment is intended for:
 
-- Argentinian Spanish (`es-AR`) and United States English (`en-US`).
-- Responsive interface for desktop, tablet, and mobile.
-- Organization profile and technology scope.
-- 24 common questions across six domains.
-- Conditional Power Platform module.
-- Conditional Copilot Studio module.
-- Maturity scale from 0 to 4.
-- Weighted overall score from 0 to 100.
-- Independent red, amber, or green risk status.
-- Domain and technology-module results.
-- Coverage map for applicable questions.
-- Automatic identification of strengths, gaps, and critical risks.
-- Up to five priority actions.
-- Indicative 90-day action plan.
-- Multi-page executive PDF report.
-- LinkedIn, book, and related-tool links.
-- Client-side response processing.
-- No backend, database, or authentication.
+- Power Platform and Copilot Studio owners;
+- Center of Excellence leaders and members;
+- adoption, communications, and organizational change leaders;
+- community managers and champion-network owners;
+- business leaders and use-case owners;
+- makers, professional developers, and architects;
+- agent owners and operators;
+- governance, security, risk, and compliance teams;
+- value realization and measurement owners.
 
-## Assessment domains
+The tool does not automatically inspect the tenant or directly measure solution usage. It evaluates the organization’s declared capabilities and acts as an entry point for deeper adoption discovery, change assessment, or roadmap definition.
+
+## How the assessment works
+
+The user follows a guided flow containing four types of information:
+
+1. **Organizational profile:** captures adoption stage, management model, technologies in scope, and priority audiences.
+2. **Core questions:** assesses adoption maturity across six weighted domains.
+3. **Conditional modules:** extends the assessment for Power Platform and Copilot Studio when those technologies are in scope.
+4. **Context and priorities:** captures the main barrier, the audience with the greatest opportunity, and the expected 90-day outcome.
+
+Profile answers do not artificially increase or reduce the primary score. They contextualize findings and activate applicable modules.
+
+Answers marked **Not applicable** are excluded from the denominator. Modules that are not activated are not displayed and do not affect scoring.
+
+## Assessment objective
+
+The primary objective is to help an organization answer one practical question:
+
+> Do we have an adoption strategy that is sufficiently structured to turn Power Platform and Copilot Studio into sustainable behaviours and measurable value?
+
+The tool separates four elements that should not be treated as equivalent:
+
+- **Adoption capabilities:** whether strategy, sponsorship, enablement, community, support, and processes exist.
+- **Behaviours:** whether people progress, participate, and use solutions or agents repeatedly.
+- **Value:** whether priority use cases deliver measurable outcomes.
+- **Sustainability:** whether the model has ownership, resources, measurement, and continuous improvement.
+
+This prevents an organization from receiving an artificially high result solely because courses, communications, licenses, applications, agents, or registered users exist.
+
+## What the user receives
+
+The results page provides:
+
+- an overall score from 0 to 100;
+- an adoption maturity level;
+- a red, amber, or green risk status;
+- a completion percentage;
+- a percentage result for each domain;
+- a separate Power Platform module result when applicable;
+- a separate Copilot Studio module result when applicable;
+- a question-level coverage map;
+- key strengths;
+- priority gaps;
+- critical risks;
+- up to five recommended actions;
+- an indicative 90-day action plan;
+- context captured through the open questions.
+
+### Downloadable PDF report
+
+The final page allows the user to generate and download an executive PDF report directly in the browser.
+
+The report can support:
+
+- an initial adoption baseline;
+- Center of Excellence and adoption workshops;
+- executive and steering committee conversations;
+- organizational change and enablement planning;
+- improvement backlog creation;
+- adoption roadmap definition;
+- comparison with future assessments.
+
+Depending on the responses, the PDF contains:
+
+- assessment name and version;
+- generation date;
+- overall score and maturity level;
+- risk status;
+- completion percentage;
+- organizational profile;
+- domain results;
+- technology-module results;
+- strengths and gaps;
+- critical risks;
+- priority actions;
+- a 90-day plan;
+- coverage map;
+- open responses;
+- scale definitions;
+- disclaimer;
+- author LinkedIn link;
+- related tools and books.
+
+The PDF is created locally from the answers entered in the browser. Downloading it does not submit assessment data to a server.
+
+## Privacy and data handling
+
+Privacy is a core design principle.
+
+The tool:
+
+- processes answers locally in the browser;
+- does not require authentication;
+- does not request an email address;
+- does not connect to a Microsoft tenant;
+- does not use a database;
+- does not store assessment answers in the repository;
+- does not include behavioural analytics;
+- does not send answers to the author or third parties.
+
+Responses exist only in the current browser session and may be lost when the page is refreshed or closed. The language preference may be stored locally.
+
+The application may make external requests to load fonts, the PDF-generation library, book covers, or linked resources. Those requests do not include assessment responses.
+
+For a fully isolated or offline deployment, external dependencies can be hosted locally.
+
+## Objectives
+
+The assessment helps determine:
+
+1. Whether a formal adoption strategy exists.
+2. Whether active executive sponsorship is in place.
+3. Whether audiences are identified and segmented.
+4. Whether differentiated adoption journeys exist.
+5. Whether enablement, community, and support build capability.
+6. Whether access and governance create clarity and trust.
+7. Whether use cases can be identified, prioritized, and scaled.
+8. Whether behaviours and outcomes are measured.
+9. Whether the model has resources, ownership, and continuous improvement.
+10. Whether Power Platform and Copilot Studio have technology-specific adoption journeys.
+11. Which areas present the highest risk or require intervention.
+12. Which actions should be prioritized during the next 90 days.
+
+## What it assesses
+
+- Formal adoption strategy.
+- Alignment with business and transformation priorities.
+- Executive sponsorship.
+- Resources, funding, and strategy review.
+- Audience segmentation.
+- Needs, motivations, and barriers.
+- Journeys from discovery to recurring use.
+- Audience-specific value propositions.
+- Learning paths.
+- Applied learning.
+- Communities and champion networks.
+- Support, mentoring, and office hours.
+- Onboarding, licensing, and access.
+- Understanding of policies and responsibilities.
+- Exceptions and decision escalation.
+- Proportionate controls.
+- Ideation, intake, and prioritization.
+- Scaling of pilots and prototypes.
+- Portfolio management.
+- Activity, behaviour, and outcome metrics.
+- Value realization.
+- Sustainability and continuous enhancement.
+- Maker progression.
+- Transition of solutions to production.
+- Agent trust, quality, and improvement.
+
+## What it does not assess
+
+- Automatic tenant inspection.
+- Direct usage measurement through APIs.
+- Technical validation of DLP policies.
+- Exhaustive security configuration review.
+- Compliance auditing.
+- Licensing review.
+- Detailed assessment of each application, flow, agent, or site.
+- Technical quality of code or solutions.
+- Benchmarking against other organizations.
+- Microsoft certification.
+- Replacement for a detailed professional discovery or assessment.
+
+## Assessment structure
+
+| Component | Count | Purpose |
+|---|---:|---|
+| Organizational profile | 4 questions | Contextualize stage, model, technologies, and audiences |
+| Core questions | 24 | Assess adoption maturity across six domains |
+| Power Platform module | Up to 3 | Extend maker, production, usage, and value coverage |
+| Copilot Studio module | Up to 3 | Extend agent creation, trust, operations, and improvement coverage |
+| Open questions | 3 | Capture barriers, opportunities, and the 90-day objective |
+| Results | N/A | Present score, risk, coverage, strengths, and actions |
+
+## Domains and weights
 
 | Domain | Weight |
 |---|---:|
@@ -244,54 +688,195 @@ The tool is part of the **CoE Toolkit** developed by **Nico Fernandez**.
 | Access, governance, and trust | 15% |
 | Use-case activation and scaling | 15% |
 | Measurement, value, and sustainability | 20% |
+| **Total** | **100%** |
 
 ## Conditional modules
 
 ### Power Platform
 
-Enabled when Power Apps, Power Automate, Power BI, or Power Pages is in scope.
+Activated when the organization selects Power Apps, Power Automate, Power BI, or Power Pages.
 
-It evaluates maker progression, prototype-to-production transition, ownership, support, lifecycle, recurring use, value, scaling, improvement, and retirement.
+It assesses:
+
+- maker profiles and progression;
+- transition from prototypes to production solutions;
+- ownership, support, security, and lifecycle;
+- end-user adoption;
+- recurring use;
+- value measurement;
+- scaling, improvement, or retirement of solutions.
 
 ### Copilot Studio
 
-Enabled when Copilot Studio is in the current or planned scope.
+Activated when the organization selects Copilot Studio.
 
-It evaluates agent-maker and owner preparation, purpose, audience, boundaries, knowledge, actions, testing, publishing, operations, user trust, quality, resolution, feedback, escalation, and responsible AI improvement.
+It assesses:
+
+- guidance for creators and owners;
+- purpose and audiences;
+- knowledge sources and actions;
+- testing, risks, and operational responsibilities;
+- user understanding of capabilities and limitations;
+- appropriate user trust;
+- verification and human escalation;
+- quality, resolution, and feedback;
+- continuous agent improvement.
+
+Modules that are not activated are not displayed and do not affect the primary score.
+
+## Response scale
+
+| Value | Response | Interpretation |
+|---:|---|---|
+| 0 | Non-existent | The capability does not exist or has not been considered. |
+| 1 | Initial | Activities are isolated, informal, or dependent on specific individuals. |
+| 2 | Defined | The capability has been designed or documented but is only partially applied. |
+| 3 | Managed | The capability is consistently applied and reviewed using evidence. |
+| 4 | Optimized | The capability is measured, continuously improved, and linked to business outcomes. |
+| N/A | Not applicable | The question does not apply to the organization and is excluded from scoring. |
+
+## Scoring model
+
+Each domain percentage is calculated from answered and applicable questions:
+
+```text
+Domain percentage =
+    Points obtained
+    --------------- × 100
+    Maximum points
+```
+
+The weighted contribution is then calculated:
+
+```text
+Weighted contribution =
+    Domain percentage × Domain weight
+```
+
+The overall score is the sum of the weighted contributions and is rounded to the nearest whole number.
+
+| Score | Level | Interpretation |
+|---:|---|---|
+| 0–39 | Initial | Adoption mainly depends on isolated initiatives. |
+| 40–59 | Emerging | Relevant capabilities exist but are fragmented or inconsistently applied. |
+| 60–74 | Defined | The strategy and core capabilities are established. |
+| 75–89 | Managed | Adoption is consistently executed and managed through evidence. |
+| 90–100 | Optimized | Adoption is embedded in the business and evolves through measurement and continuous improvement. |
+
+## Risk model
+
+Risk is calculated independently from the overall score.
+
+### Red
+
+Generated when:
+
+- one critical question scores 0; or
+- two or more critical questions score 1.
+
+### Amber
+
+Generated when there is no red condition and:
+
+- one critical question scores 1; or
+- two or more critical questions score 2.
+
+### Green
+
+Generated when no red or amber conditions are present.
+
+This prevents a high overall score from automatically offsetting a critical gap in sponsorship, governance, measurement, ownership, or supervision.
+
+## External dependencies
+
+The application uses:
+
+- [Google Fonts](https://fonts.google.com/) for `Space Grotesk` and `Inter`.
+- [jsPDF 2.5.1](https://github.com/parallax/jsPDF) for PDF generation.
+- Amazon links and images for related book editions.
+
+For a fully offline distribution, host Google Fonts, jsPDF, and image assets locally and update the references in the HTML file.
 
 ## Privacy
 
-- Answers are processed locally in the browser.
-- No answers are transmitted to a server.
-- No database is used.
-- No sign-in is required.
-- The PDF is generated locally and downloaded only when requested.
+Assessment responses:
 
-## Local use
+- are processed locally in the browser;
+- are not stored in a database;
+- are not sent to a server;
+- do not require identification;
+- do not use analytics;
+- do not require an email address.
 
-1. Download or clone the repository.
-2. Open `index.html` in a modern browser.
-3. Select a language.
-4. Complete the profile and applicable questions.
-5. Review the results.
-6. Download the PDF report.
+The language preference may be stored through `localStorage`.
 
-## Deploying with GitHub Pages
+Users may voluntarily download, save, or share the generated PDF report.
 
-1. Create a GitHub repository.
-2. Copy `index.html`, `README.md`, and the `assets` folder to the repository root.
-3. Commit and push the files.
-4. Open **Settings > Pages**.
-5. Select **Deploy from a branch**.
-6. Choose the main branch and `/root`.
-7. Save the configuration.
+Requests used to load external fonts, libraries, or images do not include assessment responses.
+
+## Additional CoE Toolkit tools
+
+- [Power Platform Tenant Inventory Explorer](https://nfernandezba.github.io/power-platform-tenant-inventory-explorer/)
+- [Power Platform & Copilot Studio Environment Strategy - Quick Assessment](https://nfernandezba.github.io/Power-Platform-Copilot-Studio-Environment-Assessment/)
+- [Copilot Studio Credits Monitor](https://nfernandezba.github.io/Copilot-Studio-Credits-Monitor/)
+
+## Related books
+
+### English
+
+- [Defining the Framework Structure for the Power Platform Center of Excellence](https://www.amazon.com/-/es/Defining-Framework-Structure-Platform-Excellence/dp/B0GDDRCD2C/ref=tmm_pap_swatch_0)
+- [Copilot Studio and the Future of the Power Platform Center of Excellence](https://www.amazon.com/-/es/Nicol%C3%A1s-Andr%C3%A9s-Fern%C3%A1ndez/dp/B0H2VTJZGR/ref=tmm_pap_swatch_0)
+
+### Spanish
+
+- [Definiendo la estructura marco para el Centro de Excelencia de Power Platform](https://www.amazon.com/-/es/Definiendo-estructura-Centro-Excelencia-Platform/dp/B0FSDWQMHW/ref=tmm_pap_swatch_0)
+- [Copilot Studio y el futuro del Centro de Excelencia de Power Platform](https://www.amazon.com/-/es/Nicol%C3%A1s-Andr%C3%A9s-Fern%C3%A1ndez/dp/B0GZGL3T1K/ref=tmm_pap_swatch_0)
 
 ## Author
 
 **Nico Fernandez**
 
-[LinkedIn](https://www.linkedin.com/in/nfernandezba)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nico%20Fernandez-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nfernandezba)
+
+## License
+
+The source code, assessment logic, and repository documentation are distributed under the **MIT License**. See [LICENSE](LICENSE).
+
+The MIT License permits use, copying, modification, merging, publication, and distribution, provided that the copyright and license notice are preserved.
+
+### Assets excluded from the MIT License
+
+Unless expressly stated otherwise, the following assets are not distributed under the MIT License:
+
+- Nico Fernandez’s name, personal logo, and visual identity;
+- book covers;
+- book content;
+- third-party trademarks, logos, and assets;
+- Microsoft trademarks.
+
+Their inclusion in the application or repository does not independently grant permission for reuse, modification, redistribution, or commercial exploitation.
+
+Forks and derivative versions should replace or remove these assets unless they have permission to use them.
+
+## Trademarks
+
+Microsoft, Power Platform, Power Apps, Power Automate, Power BI, Power Pages, Copilot Studio, Dataverse, Microsoft 365, and Dynamics 365 are trademarks of the Microsoft group of companies.
+
+This project is an independent community resource. It is not affiliated with, sponsored by, certified by, or endorsed by Microsoft.
 
 ## Disclaimer
 
-This tool is an indicative self-assessment. It is not a Microsoft certification, compliance audit, security assessment, adoption guarantee, or substitute for a detailed professional review.
+This assessment is a guidance-oriented self-assessment intended to identify capabilities and areas that may require development or review.
+
+It is not:
+
+- a Microsoft certification;
+- a compliance audit;
+- a security assessment;
+- legal advice;
+- licensing advice;
+- an adoption guarantee;
+- a financial valuation;
+- a substitute for detailed professional discovery, assessment, or review.
+
+Use of the tool and interpretation of its results remain the user’s responsibility.
