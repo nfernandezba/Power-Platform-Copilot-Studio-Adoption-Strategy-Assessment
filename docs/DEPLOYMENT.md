@@ -79,3 +79,14 @@ After deployment, if an older favicon is still shown:
 2. Perform a hard refresh.
 3. Close and reopen the browser tab.
 4. Confirm that `assets/icons/favicon.svg?rev=2` is publicly accessible.
+
+## Centered initial hero
+
+The initial screen follows the CoE Toolkit centered hero standard:
+
+- centered container with a maximum width of 900 px;
+- local CoE Toolkit SVG displayed at 78 × 78 px;
+- no glow, shadow, halo, background, pulse, or animation;
+- Aptos Display H1 with responsive `clamp()` sizing;
+- Aptos description limited to 650 px;
+- identical layout rules in Spanish and English.

@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "hero container max width is 900px": true,
+    "hero padding is exact": true,
+    "hero centered": true,
+    "local SVG is used": true,
+    "SVG width is 78": true,
+    "SVG height is 78": true,
+    "icon margin is exact": true,
+    "title font stack is exact": true,
+    "title size is exact": true,
+    "title weight is 700": true,
+    "title line-height is 1.15": true,
+    "description max width is 650": true,
+    "description Aptos font stack is exact": true,
+    "description size is .94rem": true,
+    "description line-height is 1.6": true,
+    "filter none is explicit": true,
+    "box shadow none is explicit": true,
+    "transparent background is explicit": true,
+    "animation none is explicit": true,
+    "public version remains v1.0": true
+  }
+}

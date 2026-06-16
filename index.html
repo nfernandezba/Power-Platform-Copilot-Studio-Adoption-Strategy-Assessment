@@ -180,6 +180,81 @@ button,input,select,textarea{font:inherit}button{color:inherit}a{color:inherit}.
   .books-cta{display:block!important}
 }
 
+
+/* CoE Toolkit centered hero title and icon standard */
+#intro-screen{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  padding:2.6rem 0;
+  text-align:center;
+}
+#intro-screen .intro-logo{
+  width:78px;
+  height:78px;
+  margin:0 auto 1.35rem;
+  display:block;
+  filter:none!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  animation:none!important;
+}
+#intro-screen .intro-logo-svg{
+  width:78px!important;
+  height:78px!important;
+  display:block;
+  margin:0;
+  padding:0;
+  border:0;
+  filter:none!important;
+  box-shadow:none!important;
+  background:transparent!important;
+  animation:none!important;
+  transform:none!important;
+}
+#intro-screen .intro-title{
+  max-width:900px;
+  margin:0 auto 1rem;
+  font-family:"Aptos Display","Segoe UI",Arial,sans-serif;
+  font-size:clamp(1.65rem,4vw,2.35rem);
+  font-weight:700;
+  line-height:1.15;
+  text-align:center;
+  text-wrap:balance;
+}
+#intro-screen .intro-body{
+  width:100%;
+  max-width:650px;
+  margin:0 auto 1.5rem;
+  color:var(--muted);
+  font-family:"Aptos","Segoe UI",Arial,sans-serif;
+  font-size:.94rem;
+  font-weight:400;
+  line-height:1.6;
+  text-align:center;
+}
+@media(max-width:480px){
+  #intro-screen{
+    padding:2.6rem 0;
+  }
+  #intro-screen .intro-logo,
+  #intro-screen .intro-logo-svg{
+    width:78px!important;
+    height:78px!important;
+  }
+  #intro-screen .intro-title{
+    margin-bottom:1rem;
+    font-size:clamp(1.65rem,4vw,2.35rem);
+    line-height:1.15;
+  }
+  #intro-screen .intro-body{
+    max-width:650px;
+    margin-bottom:1.5rem;
+    font-size:.94rem;
+    line-height:1.6;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -403,9 +478,9 @@ function restoreSnapshot(x){phaseIndex=x.phaseIndex;maxReached=x.maxReached;prof
 function applySampleState(){profile=JSON.parse(JSON.stringify(SAMPLE_PROFILE));answers=JSON.parse(JSON.stringify(SAMPLE_ANSWERS));openAnswers=Object.fromEntries(Object.entries(SAMPLE_OPEN).map(([k,v])=>[k,v[lang]]));sampleModeActive=true;maxReached=phases().length-1}
 function loadSampleAssessment(showResults=true){applySampleState();if(showResults){phaseIndex=phases().length-1;document.body.classList.remove('intro-mode');document.getElementById('bpf-wrap').hidden=false;renderPhase();showToast(c().sampleLoaded)}}
 function downloadSampleReport(){try{const binary=atob(SAMPLE_PDF_BASE64[lang]),bytes=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)bytes[i]=binary.charCodeAt(i);const blob=new Blob([bytes],{type:'application/pdf'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=c().sampleFileName;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);showToast(c().sampleDownloaded)}catch(e){console.error(e);showToast(c().pdfError)}}
-function runSelfTests(render=false){const checks=[];const check=(name,pass,detail='')=>checks.push({name,pass:Boolean(pass),detail});const snap=stateSnapshot();try{check('Public version is v1.0',APP_VERSION==='v1.0',APP_VERSION);check('Six scored domains',DOMAINS.length===6,String(DOMAINS.length));check('Twenty-four core questions',DOMAINS.flatMap(d=>d.questions).length===24,String(DOMAINS.flatMap(d=>d.questions).length));check('Domain weights total 100',DOMAINS.reduce((a,d)=>a+d.weight,0)===100,String(DOMAINS.reduce((a,d)=>a+d.weight,0)));check('Spanish and English content keys match',JSON.stringify(Object.keys(CONTENT.es).sort())===JSON.stringify(Object.keys(CONTENT.en).sort()));check('Every question is bilingual',[...DOMAINS.flatMap(d=>d.questions),...Object.values(MODULES).flatMap(m=>m.questions)].every(q=>q.text.es&&q.text.en&&q.title.es&&q.title.en));check('Current tool is excluded from carousel',TOOLS.every(t=>!t.title.toLowerCase().includes('adoption strategy')));check('No placeholder tool URLs',TOOLS.every(t=>!t.url||(!t.url.includes('example.com')&&!t.url.includes('localhost'))));check('Carousel has two pages',Math.ceil(TOOLS.length/2)===2,String(Math.ceil(TOOLS.length/2)));applySampleState();check('Sample score is 76',overallScore()===76,String(overallScore()));check('Sample risk is green',riskStatus().key==='green',riskStatus().key);check('Sample completion is 100%',completeness()===100,String(completeness()));check('Application Shell is present',Boolean(document.querySelector('.app-header')&&document.querySelector('.app-main-region')&&document.querySelector('.app-main')&&document.querySelector('.app-footer')));check('Favicon assets are configured',Boolean(document.querySelector('link[rel="shortcut icon"]'))&&Boolean(document.querySelector('link[type="image/svg+xml"]'))&&document.querySelector('link[type="image/svg+xml"]').href.includes('favicon.svg'),document.querySelector('link[type="image/svg+xml"]')?.href||'missing');check('Header gradient brand line is present',Boolean(document.querySelector('.app-header__brand-line'))&&getComputedStyle(document.querySelector('.app-header__brand-line')).height==='3px'&&getComputedStyle(document.querySelector('.app-header__brand-line')).backgroundImage.includes('linear-gradient'),getComputedStyle(document.querySelector('.app-header__brand-line')).backgroundImage);check('Aptos font token is active',getComputedStyle(document.body).fontFamily.includes('Aptos'),getComputedStyle(document.body).fontFamily);check('Footer has three content lines',document.querySelectorAll('.app-footer__inner > *').length===3,String(document.querySelectorAll('.app-footer__inner > *').length));check('Footer includes LinkedIn icon and localized privacy',Boolean(document.querySelector('.app-footer__author-icon'))&&Boolean(document.getElementById('footer-author-label'))&&document.getElementById('footer-privacy').textContent.length>120,document.getElementById('footer-privacy').textContent.length);check('Sample PDFs are embedded',SAMPLE_PDF_BASE64.es.length>100000&&SAMPLE_PDF_BASE64.en.length>100000,`${SAMPLE_PDF_BASE64.es.length}/${SAMPLE_PDF_BASE64.en.length}`)}catch(e){check('Unexpected test exception',false,e.message)}finally{restoreSnapshot(snap)}if(render){const el=document.getElementById('test-results');if(el){const passed=checks.filter(x=>x.pass).length;el.hidden=false;el.innerHTML=`<strong>${c().testResultsTitle}: ${passed}/${checks.length}</strong><ul>${checks.map(x=>`<li class="${x.pass?'test-pass':'test-fail'}">${x.pass?'✓':'✕'} ${escapeHtml(x.name)}${x.detail?` <span style="color:var(--muted)">(${escapeHtml(x.detail)})</span>`:''}</li>`).join('')}</ul>`}}return checks}
+function runSelfTests(render=false){const checks=[];const check=(name,pass,detail='')=>checks.push({name,pass:Boolean(pass),detail});const snap=stateSnapshot();try{check('Public version is v1.0',APP_VERSION==='v1.0',APP_VERSION);check('Six scored domains',DOMAINS.length===6,String(DOMAINS.length));check('Twenty-four core questions',DOMAINS.flatMap(d=>d.questions).length===24,String(DOMAINS.flatMap(d=>d.questions).length));check('Domain weights total 100',DOMAINS.reduce((a,d)=>a+d.weight,0)===100,String(DOMAINS.reduce((a,d)=>a+d.weight,0)));check('Spanish and English content keys match',JSON.stringify(Object.keys(CONTENT.es).sort())===JSON.stringify(Object.keys(CONTENT.en).sort()));check('Every question is bilingual',[...DOMAINS.flatMap(d=>d.questions),...Object.values(MODULES).flatMap(m=>m.questions)].every(q=>q.text.es&&q.text.en&&q.title.es&&q.title.en));check('Current tool is excluded from carousel',TOOLS.every(t=>!t.title.toLowerCase().includes('adoption strategy')));check('No placeholder tool URLs',TOOLS.every(t=>!t.url||(!t.url.includes('example.com')&&!t.url.includes('localhost'))));check('Carousel has two pages',Math.ceil(TOOLS.length/2)===2,String(Math.ceil(TOOLS.length/2)));applySampleState();check('Sample score is 76',overallScore()===76,String(overallScore()));check('Sample risk is green',riskStatus().key==='green',riskStatus().key);check('Sample completion is 100%',completeness()===100,String(completeness()));check('Application Shell is present',Boolean(document.querySelector('.app-header')&&document.querySelector('.app-main-region')&&document.querySelector('.app-main')&&document.querySelector('.app-footer')));check('Centered hero has one primary H1',document.querySelectorAll('#intro-screen h1').length===1,String(document.querySelectorAll('#intro-screen h1').length));check('Centered hero uses the inline local 78px CoE Toolkit SVG',Boolean(document.querySelector('#intro-screen svg.intro-logo-svg'))&&document.querySelector('#intro-screen .intro-logo').dataset.source==='./assets/icons/favicon.svg'&&document.querySelector('#intro-screen svg.intro-logo-svg').getAttribute('width')==='78'&&document.querySelector('#intro-screen svg.intro-logo-svg').getAttribute('height')==='78'&&document.querySelector('#intro-screen svg.intro-logo-svg').getAttribute('viewBox')==='0 0 375 375',document.querySelector('#intro-screen svg.intro-logo-svg')?.outerHTML.slice(0,180)||'missing');check('Centered hero icon has no decorative effects',(()=>{const el=document.querySelector('#intro-screen .intro-logo-svg');if(!el)return false;const s=getComputedStyle(el);return s.filter==='none'&&s.boxShadow==='none'&&s.animationName==='none'&&(s.backgroundColor==='rgba(0, 0, 0, 0)'||s.backgroundColor==='transparent')})(),document.querySelector('#intro-screen .intro-logo-svg')?`${getComputedStyle(document.querySelector('#intro-screen .intro-logo-svg')).filter}/${getComputedStyle(document.querySelector('#intro-screen .intro-logo-svg')).boxShadow}/${getComputedStyle(document.querySelector('#intro-screen .intro-logo-svg')).animationName}`:'missing');check('Favicon assets are configured',Boolean(document.querySelector('link[rel="shortcut icon"]'))&&Boolean(document.querySelector('link[type="image/svg+xml"]'))&&document.querySelector('link[type="image/svg+xml"]').href.includes('favicon.svg'),document.querySelector('link[type="image/svg+xml"]')?.href||'missing');check('Header gradient brand line is present',Boolean(document.querySelector('.app-header__brand-line'))&&getComputedStyle(document.querySelector('.app-header__brand-line')).height==='3px'&&getComputedStyle(document.querySelector('.app-header__brand-line')).backgroundImage.includes('linear-gradient'),getComputedStyle(document.querySelector('.app-header__brand-line')).backgroundImage);check('Aptos font token is active',getComputedStyle(document.body).fontFamily.includes('Aptos'),getComputedStyle(document.body).fontFamily);check('Footer has three content lines',document.querySelectorAll('.app-footer__inner > *').length===3,String(document.querySelectorAll('.app-footer__inner > *').length));check('Footer includes LinkedIn icon and localized privacy',Boolean(document.querySelector('.app-footer__author-icon'))&&Boolean(document.getElementById('footer-author-label'))&&document.getElementById('footer-privacy').textContent.length>120,document.getElementById('footer-privacy').textContent.length);check('Sample PDFs are embedded',SAMPLE_PDF_BASE64.es.length>100000&&SAMPLE_PDF_BASE64.en.length>100000,`${SAMPLE_PDF_BASE64.es.length}/${SAMPLE_PDF_BASE64.en.length}`)}catch(e){check('Unexpected test exception',false,e.message)}finally{restoreSnapshot(snap)}if(render){const el=document.getElementById('test-results');if(el){const passed=checks.filter(x=>x.pass).length;el.hidden=false;el.innerHTML=`<strong>${c().testResultsTitle}: ${passed}/${checks.length}</strong><ul>${checks.map(x=>`<li class="${x.pass?'test-pass':'test-fail'}">${x.pass?'✓':'✕'} ${escapeHtml(x.name)}${x.detail?` <span style="color:var(--muted)">(${escapeHtml(x.detail)})</span>`:''}</li>`).join('')}</ul>`}}return checks}
 window.__coeTestApi={loadSample:()=>loadSampleAssessment(true),downloadSamplePdf:downloadSampleReport,runSelfTests:()=>runSelfTests(false),getState:()=>({phaseIndex,maxReached,profile,answers,openAnswers,sampleModeActive,score:overallScore(),risk:riskStatus().key,completeness:completeness()})};
-function renderIntro(){phaseIndex=-1;document.body.classList.add('intro-mode');document.getElementById('bpf-wrap').hidden=true;document.getElementById('screen-container').innerHTML=`<section id="intro-screen"><div class="intro-logo">${document.querySelector('.brand-logo').outerHTML}</div><h1 class="intro-title">${TOOL_TITLE}</h1><p class="intro-body">${c().introBody}</p><div class="intro-grid">${c().introItems.map(x=>`<div class="intro-item">${x}</div>`).join('')}</div><div class="disclaimer">${c().disclaimer}</div><div class="privacy-note">${c().privacy}</div><button class="btn btn-primary" onclick="startAssessment()">${c().start}</button>${renderTestPanel()}</section>`}
+function renderIntro(){phaseIndex=-1;document.body.classList.add('intro-mode');document.getElementById('bpf-wrap').hidden=true;document.getElementById('screen-container').innerHTML=`<section id="intro-screen"><div class="intro-logo" data-source="./assets/icons/favicon.svg"><svg class="intro-logo-svg" width="78" height="78" aria-hidden="true" focusable="false" viewBox="0 0 375 375" xmlns="http://www.w3.org/2000/svg"><path d="M187.508 68.336v65.129L238.699 83.3V18.19z" fill="#287ee1"/><path d="M136.313 18.191v65.11l51.195 50.164v-65.13z" fill="#3895ff"/><path d="m136.313 18.191 51.195 50.145 51.191-50.145z" fill="#64acff"/><path d="M187.484 306.625v-65.129l-51.191 50.164v65.11z" fill="#14848f"/><path d="M238.68 356.77v-65.11l-51.196-50.164v65.129z" fill="#27b8c6"/><path d="m238.68 356.77-51.196-50.145-51.191 50.145z" fill="#43d1df"/><path d="M303.828 187.95H238.7l50.168 51.195h65.11z" fill="#ffc000"/><path d="M353.977 136.758h-65.11L238.7 187.949h65.13z" fill="#826200"/><path d="m353.977 136.758-50.149 51.191 50.149 51.196z" fill="#ffd452"/><path d="M71.164 187.012h65.129l-50.168-51.196h-65.11z" fill="#742774"/><path d="M21.016 238.203h65.109l50.168-51.191H71.164z" fill="#bd47bd"/><path d="m21.016 238.203 50.148-51.191-50.148-51.196z" fill="#d671d6"/><path d="M230.086 208.98a.977.977 0 0 0-.324-.738c-7.371-7.12-14.746-14.242-22.121-21.363l-.325-.313c6.868-7.109 13.73-14.218 20.598-21.328l.98-1.015a1.062 1.062 0 0 0-.023-1.493l-18.562-17.925a1.066 1.066 0 0 0-1.493.027l-21.328 22.086a15.33 15.33 0 0 0-.25.258c-7.12-6.875-14.242-13.75-21.363-20.63-.363-.347-.723-.694-1.082-1.042a1.066 1.066 0 0 0-1.492.027l-17.926 18.563a1.066 1.066 0 0 0 .027 1.492 57067.63 57067.63 0 0 1 22.121 21.36l.325.312a104926.389 104926.389 0 0 1-21.77 22.543 1.066 1.066 0 0 0 .027 1.492l18.563 17.926c.414.398 1.09.386 1.492-.028 7.13-7.386 14.262-14.77 21.395-22.156l.375-.387 21.363 20.63c.36.347.719.695 1.082 1.042a1.06 1.06 0 0 0 1.488-.023 10356.09 10356.09 0 0 0 17.926-18.567.978.978 0 0 0 .297-.75" fill="#5552b4"/></svg></div><h1 class="intro-title">${TOOL_TITLE}</h1><p class="intro-body">${c().introBody}</p><div class="intro-grid">${c().introItems.map(x=>`<div class="intro-item">${x}</div>`).join('')}</div><div class="disclaimer">${c().disclaimer}</div><div class="privacy-note">${c().privacy}</div><button class="btn btn-primary" onclick="startAssessment()">${c().start}</button>${renderTestPanel()}</section>`}
 function startAssessment(){sampleModeActive=false;phaseIndex=0;maxReached=Math.max(maxReached,0);document.body.classList.remove('intro-mode');document.getElementById('bpf-wrap').hidden=false;renderPhase()}
 function renderBpf(){const ps=phases(),pct=ps.length<=1?100:Math.round((Math.max(phaseIndex,0)/(ps.length-1))*100),desktop=ps.map((p,i)=>`<button type="button" class="bpf-phase ${i===phaseIndex?'active':''} ${i<phaseIndex?'done':''} ${i<=maxReached?'clickable':''}" ${i<=maxReached?`onclick="goToPhase(${i})"`:'disabled'}><span class="bpf-circle">${i<phaseIndex?'✓':i+1}</span><span class="bpf-label">${p.name[lang]}</span></button>`).join('');const current=ps[Math.max(0,phaseIndex)];document.getElementById('bpf').innerHTML=`<div class="bpf-desktop">${desktop}</div><div class="bpf-mobile"><details class="bpf-mobile-details"><summary class="bpf-mobile-summary"><span class="bpf-mobile-copy"><span class="bpf-mobile-step">${c().stepLabel(phaseIndex+1,ps.length)}</span><span class="bpf-mobile-title">${current.name[lang]}</span></span><span class="bpf-mobile-toggle">${c().showSteps}</span><div class="bpf-progress-track"><div class="bpf-progress-fill" style="width:${pct}%"></div></div></summary><div class="bpf-mobile-list">${desktop}</div></details></div>`}
 function goToPhase(i){if(i<=maxReached){phaseIndex=i;renderPhase()}}

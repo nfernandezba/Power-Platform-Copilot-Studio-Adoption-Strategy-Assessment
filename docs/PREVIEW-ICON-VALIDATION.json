@@ -1,0 +1,16 @@
+{
+  "opening_tag": "<svg class=\"intro-logo-svg\" width=\"78\" height=\"78\" aria-hidden=\"true\" focusable=\"false\" viewBox=\"0 0 375 375\" xmlns=\"http://www.w3.org/2000/svg\">",
+  "checks": {
+    "inline_hero_svg_exists": true,
+    "one_width_attribute": true,
+    "one_height_attribute": true,
+    "width_is_78": true,
+    "height_is_78": true,
+    "viewbox_preserved": true,
+    "canonical_source_recorded": true,
+    "no_external_hero_img": true,
+    "standalone_favicon_embedded": true,
+    "package_favicon_paths_retained": true,
+    "version_remains_v1_0": true
+  }
+}
